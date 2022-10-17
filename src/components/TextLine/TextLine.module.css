@@ -1,0 +1,16 @@
+.container {
+  display: flex;
+  justify-content: start;
+  flex-wrap: nowrap;
+}
+
+.lead {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre;
+  flex-shrink: 1;
+}
+
+.tail {
+  white-space: pre;
+}
