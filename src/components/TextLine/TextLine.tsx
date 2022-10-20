@@ -1,4 +1,5 @@
 import { memo } from "react";
+import cn from "classnames";
 
 import styles from "./TextLine.module.css";
 import useSplittedText from "./useSplittedText";
@@ -10,12 +11,12 @@ type TextLineProps = {
   className?: string;
 };
 
-// Для работы с css классами обычно использую classnames
-
-export const TextLine = memo(({ children, tailLength, title, className }: TextLineProps) => {
+export const TextLine = memo<TextLineProps>(({ children, tailLength, title, className }) => {
   const [leadText, tailText] = useSplittedText(children, tailLength);
+  const containerClassName = cn(styles.container, className);
+  
   return (
-    <div title={title} className={`${styles.container} ${className}`}>
+    <div title={title} className={containerClassName}>
       <span className={styles.lead}>{leadText}</span>
       <span className={styles.tail}>{tailText}</span>
     </div>
