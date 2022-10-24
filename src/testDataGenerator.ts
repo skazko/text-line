@@ -25,7 +25,7 @@ export function generateTestData(count: number): TextLineData[] {
     const tailLength = getRandom(tails);
     const className = Boolean(getRandomInt(2)) ? "error" : undefined;
     const title = Boolean(getRandomInt(2)) ? text : undefined;
-    const id = `${count}`
+    const id = `${count}${Date.now()}`
 
     testData.push({
       text,
