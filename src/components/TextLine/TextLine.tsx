@@ -19,7 +19,10 @@ export const TextLine = memo<TextLineProps>(({ children, tailLength, title, clas
 
   return (
     <div title={title} className={containerClassName} onCopy={copyHandler}>
-      <span className={styles.lead}>{leadText}</span>
+      <span className={styles.lead}>
+        <span className={styles.highlighter}>{children}</span>
+        <span>{leadText}</span>
+      </span>
       <span className={styles.tail}>{tailText}</span>
     </div>
   );

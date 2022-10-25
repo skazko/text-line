@@ -10,6 +10,15 @@
   text-overflow: ellipsis;
   white-space: pre;
   flex-shrink: 1;
+  position: relative;
+}
+
+.highlighter {
+  position: absolute;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: transparent;
+  pointer-events: none;
 }
 
 .tail {

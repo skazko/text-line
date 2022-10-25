@@ -5,6 +5,8 @@ export default function useCopyHandler(): ClipboardEventHandler {
  
   return useCallback((e: ClipboardEvent) => {
     e.preventDefault();
-    copy(window.getSelection()?.toString().replace(/\n/g, '') ?? '');
+    const selectedRawTextWithHighlighter = window.getSelection()?.toString() ?? '';
+    const handledText = selectedRawTextWithHighlighter.replace(/\n/g, '');
+    copy(handledText);
   }, []);
 }
