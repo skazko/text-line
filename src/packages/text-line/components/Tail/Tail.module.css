@@ -1,0 +1,10 @@
+.tail::before {
+  content: '...';
+  position: absolute;
+  visibility: hidden;
+}
+
+.overflow::before {
+  position: relative;
+  visibility: visible;
+}

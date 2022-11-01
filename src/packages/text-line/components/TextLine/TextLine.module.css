@@ -1,0 +1,6 @@
+.container {
+  overflow: hidden;
+  text-overflow: clip;
+  white-space: nowrap;
+  position: relative;
+}

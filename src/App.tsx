@@ -1,7 +1,7 @@
-import { useState } from "react";
+import {  useState } from "react";
 import Split from "react-split";
 import "./App.css";
-import { TextLine } from "./components";
+import { TextLine } from "./packages/text-line";
 import { generateTestData } from "./testDataGenerator";
 
 function App() {
@@ -27,7 +27,8 @@ function App() {
         </div>
       </Split>
     </div>
-  );
+   ); 
+
 }
 
 export default App;
