@@ -1,8 +1,10 @@
 import {  useState } from "react";
 import Split from "react-split";
-import "./App.css";
+
 import { TextLine } from "./packages/text-line";
 import { generateTestData } from "./testDataGenerator";
+
+import "./App.css";
 
 function App() {
   const [firstColumn] = useState(generateTestData(2000));

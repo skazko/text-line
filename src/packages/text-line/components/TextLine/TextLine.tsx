@@ -1,5 +1,6 @@
 import { memo } from "react";
 import cn from "classnames";
+import RenderIfVisible from "react-render-if-visible";
 
 import styles from "./TextLine.module.css";
 import { Letter } from "../Letter/Letter";
@@ -20,14 +21,16 @@ const _TextLine = ({ children, tailLength, title, className }: TextLineProps) =>
   const containerClassName = cn(styles.container, className);
 
   return (
-    <div ref={ref} title={title} className={containerClassName}>
-      {leadText.map((letter, index) => (
-        <Letter key={index} availableWidth={availableWidth} isOverflowed={isOverflowed}>
-          {letter}
-        </Letter>
-      ))}
-      {tailText.length > 0 && <Tail isOverflowed={isOverflowed}>{tailText}</Tail>}
-    </div>
+    <RenderIfVisible>
+      <div ref={ref} title={title} className={containerClassName}>
+        {leadText.map((letter, index) => (
+          <Letter key={index} availableWidth={availableWidth} isOverflowed={isOverflowed}>
+            {letter}
+          </Letter>
+        ))}
+        {tailText.length > 0 && <Tail isOverflowed={isOverflowed}>{tailText}</Tail>}
+      </div>
+    </RenderIfVisible>
   );
 };
 
